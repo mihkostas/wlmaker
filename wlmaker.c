@@ -11,8 +11,8 @@ int main( int argc, char *argv[] ) {
 	char **strs;
 	char buff[30];
 	
-	if(!strcmp(argv[1],"-help")){
-	 printf("wlmaker <filename> <lines>\nAuto lines max number are 130 and less");
+	if(!strcmp(argv[1],"--help")){
+	 printf("wlmaker <filename> <lines>\nAuto lines max number are 130 and less\n");
 	 exit(2);
 	}
 	
@@ -24,7 +24,7 @@ int main( int argc, char *argv[] ) {
 	if(fp==NULL){printf("Error: file does not exist or is NULL\n");exit(2);}
 	
 	fpout = fopen("wordlist_out.txt","w");
-	if(fpout==NULL){printf("Error: output file has not been created");exit(2);}
+	if(fpout==NULL){printf("Error: output file has not been created\n");exit(2);}
 	
 	for(i=0;!feof(fp);i++){
 		
@@ -51,7 +51,7 @@ int main( int argc, char *argv[] ) {
 	fclose(fp);
 	fclose(fpout);
 	free(strs);
-	printf("The file wordlist_out.txt has been created successfully");
+	printf("The file wordlist_out.txt has been created successfully\n");
 	return 0;
 	
 }
